@@ -26,22 +26,23 @@ app.get("/", (req, res) => {
 const storage = multer.diskStorage({
   destination: './upload/images',
   filename: (req, file, cb) => {
-    return cb(null, `${file.fieldname}_${Date.now()}${path.extname(file.originalname)}`)
+    cb(null, `${file.fieldname}_${Date.now()}${path.extname(file.originalname)}`);
   }
 })
 
 const upload = multer({ storage: storage })
 
-
 //Creating Upload Endpoint for images
 app.use('/images', express.static('upload/images'))
 app.post("/upload", upload.single('product'), (req, res) => {
+  console.log(req.file);
+  console.log(req.file.filename);
+
   res.json({
     success: 1,
-
     image_url: `http://localhost:${port}/images/${req.file.filename}`,
 
-  })
+  });
 })
 
 const Product = mongoose.model("Product", {
@@ -126,8 +127,6 @@ app.get('/allproducts', async (req, res) => {
   res.send(products);
 
 })
-
-
 
 
 app.listen(port, (error) => {
