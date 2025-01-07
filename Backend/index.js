@@ -7,7 +7,7 @@ const multer = require("multer");
 const path = require("path");
 const cors = require("cors");
 const { type } = require("os");
-const { log } = require("console");
+const { log, clear } = require("console");
 
 app.use(express.json());
 app.use(cors());
@@ -201,8 +201,13 @@ app.post('/login', async (req, res) => {
   }
 })
 
-
-
+//Creating Endpoint for New Collection data
+app.get('/newcollections', async (req, res) => {
+  let products = await Product.find({});
+  let newcollection = products.slice(1).slice(-8);
+  console.log("NewCollection Fetched");
+  res.send(newcollection);
+})
 
 
 
