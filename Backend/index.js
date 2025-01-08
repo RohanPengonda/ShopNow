@@ -7,7 +7,8 @@ const multer = require("multer");
 const path = require("path");
 const cors = require("cors");
 const { type } = require("os");
-const { log, clear } = require("console");
+const { log, clear, error } = require("console");
+const { send } = require("process");
 
 app.use(express.json());
 app.use(cors());
@@ -209,7 +210,44 @@ app.get('/newcollections', async (req, res) => {
   res.send(newcollection);
 })
 
+//Creating Endpoint for popular in women Section
+app.get('/popularinwomen', async (req, res) => {
+  let products = await Product.find({ category: 'women' });
+  let popular_in_women = products.slice(0, 4);
+  console.log("Popular in women Fetched");
+  res.send(popular_in_women);
 
+})
+
+//Creating Middleware to fetch user
+const fetchUser = async (req, res, next) => {
+  const token = req.header('auth-token');
+  if (!token) {
+    res.status(401).send({ errors: "Please Authenticate using valid token" });
+  }
+  else {
+    try {
+      const data = jwt.verify(token, 'secret_ecom');
+      req.user = data.user;
+      next();
+    }
+    catch (error) {
+      res.status(401).send({ errors: "Please Authenticate using valid token 1" })
+    }
+  }
+}
+
+//Creating Endpoint for adding products in Cartdata
+app.post('/addtocart', fetchUser, async (req, res) => {
+  let userData = await Users.findOne({ _id: req.user.id });
+  userData.cartData[req.body.itemId] += 1;
+  await Users.findOneAndUpdate({ _id: req.user.id }, { cartData: userData.cartData });
+  console.log(req.body, req.user);
+  console.log(req.body.itemId);
+  res.send({ message: "Added" });
+
+
+})
 
 app.listen(port, (error) => {
   if (!error) {
