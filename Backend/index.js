@@ -239,14 +239,30 @@ const fetchUser = async (req, res, next) => {
 
 //Creating Endpoint for adding products in Cartdata
 app.post('/addtocart', fetchUser, async (req, res) => {
+  console.log("Added", req.body.itemId);
+
   let userData = await Users.findOne({ _id: req.user.id });
-  userData.cartData[req.body.itemId] += 1;
+  userData.cartData[req.body.item] += 1;
   await Users.findOneAndUpdate({ _id: req.user.id }, { cartData: userData.cartData });
-  console.log(req.body, req.user);
-  console.log(req.body.itemId);
   res.send({ message: "Added" });
+})
 
+//Creating Endpoint to remove product from Cartdata
+app.post('/removefromcart', fetchUser, async (req, res) => {
+  console.log("Removed", req.body.itemId);
+  let userData = await Users.findOne({ _id: req.user.id });
+  if (userData.cartData[req.body.item] > 0)
+    userData.cartData[req.body.item] -= 1;
+  await Users.findOneAndUpdate({ _id: req.user.id }, { cartData: userData.cartData });
+  res.send({ message: "Removed" });
 
+})
+
+//Creating Endpoint to get cart Data
+app.post('/getcart', fetchUser, async (req, res) => {
+  console.log("GetCart")
+  let userData = await Users.findOne({ _id: req.user.id });
+  res.json(userData.cartData);
 })
 
 app.listen(port, (error) => {
