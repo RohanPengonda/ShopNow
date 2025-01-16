@@ -36,3 +36,13 @@ Successfully delivered a user-friendly shopping platform, demonstrating strong c
 
 ![image](https://github.com/user-attachments/assets/697d7106-03b0-405e-8915-90974ca28724)
 
+
+**Customer Panel**
+1. Login Page
+
+2. Home Page
+
+
+https://github.com/user-attachments/assets/61914dcb-0a9b-48ce-9120-761a4bfeae7e
+
+
