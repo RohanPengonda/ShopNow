@@ -25,14 +25,14 @@ Developed a full-stack Shopping Application designed to deliver a seamless onlin
 Successfully delivered a user-friendly shopping platform, demonstrating strong capabilities in full-stack development. This project enhanced my skills in building scalable, secure, and responsive web applications while solidifying my expertise in React.js, Node.js, and MongoDB.
 
 
-**Admin Panel
-**
+**Admin Panel**
 
-**1. Adding Products
+**1. Adding Products**
 
 ![1](https://github.com/user-attachments/assets/250c0861-1c41-463b-96af-31a39568c6ea)
 
 
-2. List All Products**
+**2. List All Products**
+
 ![image](https://github.com/user-attachments/assets/697d7106-03b0-405e-8915-90974ca28724)
 
