@@ -52,7 +52,11 @@ https://github.com/user-attachments/assets/61914dcb-0a9b-48ce-9120-761a4bfeae7e
 
 3.Mens ,Womens and Kids Section
 
+
+
 4.Cart Section
 
+
+https://github.com/user-attachments/assets/78ee83d4-bd32-4177-a64e-42ca1ba812af
 
 
