@@ -40,9 +40,19 @@ Successfully delivered a user-friendly shopping platform, demonstrating strong c
 **Customer Panel**
 1. Login Page
 
+
+https://github.com/user-attachments/assets/ae9d134e-eefd-4559-9ff8-99a5e87da596
+
+
+
 2. Home Page
 
 
 https://github.com/user-attachments/assets/61914dcb-0a9b-48ce-9120-761a4bfeae7e
+
+3.Mens ,Womens and Kids Section
+
+4.Cart Section
+
 
 
