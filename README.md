@@ -48,9 +48,12 @@ https://github.com/user-attachments/assets/ae9d134e-eefd-4559-9ff8-99a5e87da596
 2. Home Page
 
 
-https://github.com/user-attachments/assets/61914dcb-0a9b-48ce-9120-761a4bfeae7e
 
-3.Mens ,Womens and Kids Section
+https://github.com/user-attachments/assets/b5838db7-251e-49c8-a053-61b127b29414
+
+
+
+3. Mens ,Womens and Kids Section
 
 
 
@@ -58,7 +61,7 @@ https://github.com/user-attachments/assets/d7644796-d5f2-4830-9d3c-294a4b8a5106
 
 
 
-4.Cart Section
+4. Cart Section
 
 
 https://github.com/user-attachments/assets/78ee83d4-bd32-4177-a64e-42ca1ba812af
