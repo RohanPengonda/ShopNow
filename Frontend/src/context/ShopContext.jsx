@@ -35,17 +35,18 @@ const ShopContextProvider = (props) => {
   }, []);
 
   const addToCart = (itemId) => {
+    console.log("Addtocart");
     setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] + 1 }));
 
-    if (localStorage.getItem("auth_token")) {
+    if (localStorage.getItem("auth-token")) {
       fetch("http://localhost:4000/addtocart", {
         method: "POST",
         headers: {
-          Accept: "application/form-data",
+          Accept: "application/json",
           "auth-token": `${localStorage.getItem("auth-token")}`,
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ itemId: itemId }),
+        body: JSON.stringify({ item: itemId }),
       })
         .then((response) => response.json())
         .then((data) => console.log(data));
@@ -55,7 +56,7 @@ const ShopContextProvider = (props) => {
   const removeFromCart = (itemId) => {
     setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] - 1 }));
 
-    if (localStorage.getItem("auth_token")) {
+    if (localStorage.getItem("auth-token")) {
       fetch("http://localhost:4000/removefromcart", {
         method: "POST",
         headers: {
@@ -63,7 +64,7 @@ const ShopContextProvider = (props) => {
           "auth-token": `${localStorage.getItem("auth-token")}`,
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ itemId: itemId }),
+        body: JSON.stringify({ itemId }),
       })
         .then((response) => response.json())
         .then((data) => console.log(data));
